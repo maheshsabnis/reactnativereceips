@@ -1,0 +1,49 @@
+ 
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { StyleSheet, Text, View,Button, TextInput } from 'react-native';
+import MessageComponent from './messagecomponent';
+import FlatListComponent from './flatlistcomponent';
+import SectionListComponent from './sectionlist';
+export default function App() {
+  const [message, setMessage] = useState('');
+  const updateMessage=()=>{
+    setMessage('Hello React Native');
+  };
+  const messageTextChanged=(evt)=>{
+    setMessage(evt.target.value);
+  }; 
+  return (
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your!sexesecd</Text>
+      {/* <Text>The Message {message}</Text>
+      <StatusBar style="auto" />
+      <Button title='Set Message' color={styles.button.color}
+        onPress={updateMessage}/>
+       <MessageComponent message={message}/> 
+       <TextInput value={message} 
+       onChangeText={(text)=>setMessage(text)}
+        style={styles.input}/> */}
+        {/* <FlatListComponent/> */}
+        <SectionListComponent/>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  button: {
+    color:'red'
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  }
+});
